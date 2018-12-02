@@ -6,8 +6,9 @@ using UnityEngine.Tilemaps;
 public class TileMapGenerator : MonoBehaviour 
 {
     public Tilemap tilemap;
-    public TileBase tile;
-    public TileBase tileDirt;
+    
+    //Tile id 0 to (length - 1)
+    public TileBase[] dirtTiles;
     
     public int width = 100;
     public int height = 100;
@@ -32,7 +33,7 @@ public class TileMapGenerator : MonoBehaviour
             for(int y = 0; y < height; y++)
             {
                 int index = getIndex(x, y);
-                mapData[index] = index % 2;
+                mapData[index] = Random.Range(0, dirtTiles.Length - 1);
             }
         }
         
@@ -48,13 +49,10 @@ public class TileMapGenerator : MonoBehaviour
             {
                 int index = getIndex(x, y);
                 int data = mapData[index];
-                if(data == 1)
+                if(data < dirtTiles.Length)
                 {
+                    TileBase tile = dirtTiles[data];
                     tilemap.SetTile(new Vector3Int(x + offsetX, y + offsetY, 0), tile); 
-                }
-                else
-                {
-                    tilemap.SetTile(new Vector3Int(x + offsetX, y + offsetY, 0), tileDirt); 
                 }
             }
         }
