@@ -13,13 +13,16 @@ public class PlayerOptionData
     public float zoomSpeed = 0.1f;
     
     public int maxJunkSpawn = 1000;
-    public float maxJunkSpeed = 4f;
+    public float maxJunkSpeed = 4f;  //TODO remove
+    
+    public float cameraMovementHorizontal = 5f; //TODO save
+    public float cameraMovementVertical = 5f; //TODO save
     
     public bool enableEffects = true;
-    public bool enableShipTrail = true;
+    public bool enableShipTrail = true; //TODO remove
     public bool enableBulletTrail = true;
-    public bool enableShipBasedMovement = true;	
-    public bool enableMouseAim = true;	
+    public bool enableShipBasedMovement = true;	 //TODO remove
+    public bool enableMouseAim = true;	 //TODO remove
     
     public void CopyInto(PlayerOptionData data)
     {
@@ -30,6 +33,9 @@ public class PlayerOptionData
         data.zoomSpeed = zoomSpeed;
         
         data.maxJunkSpawn = maxJunkSpawn;
+        
+        data.cameraMovementHorizontal = cameraMovementHorizontal;
+        data.cameraMovementVertical = cameraMovementVertical;
         
         data.enableEffects = enableEffects;
         data.enableShipTrail = enableShipTrail;

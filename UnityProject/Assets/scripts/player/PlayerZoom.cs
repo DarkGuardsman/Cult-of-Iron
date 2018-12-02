@@ -8,7 +8,6 @@ public class PlayerZoom : PlayerControls
     public float minZoom = 5;
     public float maxZoom = 20;
     
-    private GameController gameController;
     private PlayerOptions playerOptions;
     private CinemachineVirtualCamera cinemachineCamera;
     
@@ -16,7 +15,6 @@ public class PlayerZoom : PlayerControls
 	public override void Start () 
     {
         base.Start();
-		gameController = FindObjectOfType<GameController>();
         playerOptions = FindObjectOfType<PlayerOptions>();
         cinemachineCamera = FindObjectOfType<CinemachineVirtualCamera>();
 	}
