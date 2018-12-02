@@ -27,18 +27,26 @@ public class FindTarget : MonoBehaviour
             //Set target to null in case it was set but not valid
             host.currentTarget = null;
             
-            //Delay to target again (reduces lag issues)
-            if(targetTimer <= 0)
+            if(shouldFindTarget())
             {
-                targetTimer = targetDelay;
-                findTarget();
-            }
-            else
-            {
-                targetTimer -= Time.deltaTime;
+                //Delay to target again (reduces lag issues)
+                if(targetTimer <= 0)
+                {
+                    targetTimer = targetDelay;
+                    findTarget();
+                }
+                else
+                {
+                    targetTimer -= Time.deltaTime;
+                }
             }
         }
 	}
+    
+    protected virtual bool shouldFindTarget()
+    {
+        return true;
+    }
     
     protected virtual bool isTargetValid(Entity target)
     {

@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4705157425093216}
   - component: {fileID: 212090791282736132}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,12 +38,13 @@ GameObject:
   - component: {fileID: 50203862410510954}
   - component: {fileID: 58954906715253010}
   - component: {fileID: 114141057450512094}
-  - component: {fileID: 114036808814446228}
   - component: {fileID: 114516310371231012}
   - component: {fileID: 114896170983979574}
   - component: {fileID: 114444247568871836}
   - component: {fileID: 114640955121007660}
-  m_Layer: 10
+  - component: {fileID: 114245798231824090}
+  - component: {fileID: 114950455298409674}
+  m_Layer: 9
   m_Name: GenericMob
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,25 +113,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.035410106}
   serializedVersion: 2
   m_Radius: 0.36458987
---- !u!114 &114036808814446228
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1426938034879078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fafe11f86200ee4abd1a91c1624fa07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  teamID: 0
-  pauseMovementOnTeleportDelay: 1
-  team: {fileID: 0}
-  teamManager: {fileID: 0}
-  damageData: {fileID: 0}
-  basePointValue: 1
-  currentTarget: {fileID: 0}
-  currentObjective: {fileID: 0}
 --- !u!114 &114141057450512094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -145,6 +127,26 @@ MonoBehaviour:
   targetDelay: 1
   targetRange: 50
   host: {fileID: 0}
+--- !u!114 &114245798231824090
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1426938034879078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f01597fbbd537444fba54f2c8c70da02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teamID: 0
+  pauseMovementOnTeleportDelay: 1
+  team: {fileID: 0}
+  teamManager: {fileID: 0}
+  damageData: {fileID: 0}
+  basePointValue: 1
+  currentTarget: {fileID: 0}
+  currentObjective: {fileID: 0}
+  heldScrapItem: {fileID: 0}
 --- !u!114 &114444247568871836
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -156,7 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07cfd6bbb7af801468d9551758401d4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  host: {fileID: 114036808814446228}
+  host: {fileID: 0}
 --- !u!114 &114516310371231012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -236,6 +238,21 @@ MonoBehaviour:
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
   constrainInsideGraph: 1
+--- !u!114 &114950455298409674
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1426938034879078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8a2ab34df50a714189ba1241bc39012, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  host: {fileID: 114245798231824090}
+  targetDelay: 1
+  targetRange: 100
+  pickUpDistance: 2
 --- !u!212 &212090791282736132
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -268,8 +285,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1899120013
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 41c347312297e4b149a2c7d4a1038bee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -9,4 +9,14 @@ public class EntityMob : Entity {
     
     //Location to move towards if no target
     public Transform currentObjective;
+    
+    public bool hasTarget()
+    {
+        return currentTarget != null;
+    }
+    
+    public bool hasObjective()
+    {
+        return currentObjective != null;
+    }
 }
