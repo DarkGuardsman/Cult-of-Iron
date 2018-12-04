@@ -6436,7 +6436,7 @@ GameObject:
   m_Component:
   - component: {fileID: 786630601}
   - component: {fileID: 786630602}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: New Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6488,9 +6488,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 244740435
-  m_SortingLayer: 1
-  m_SortingOrder: -3
+  m_SortingLayerID: -1899120013
+  m_SortingLayer: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e918fa9e67530274bb49b6eeeb65d89b, type: 3}
   m_Color: {r: 0.34122592, g: 0.87058824, b: 0, a: 1}
   m_FlipX: 0
@@ -8425,11 +8425,6 @@ Prefab:
       propertyPath: teamManager
       value: 
       objectReference: {fileID: 1243243981}
-    - target: {fileID: 58954906715253010, guid: 70a58d1f787a5ef4d9edd611d8405028,
-        type: 2}
-      propertyPath: m_Radius
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70a58d1f787a5ef4d9edd611d8405028, type: 2}
   m_IsPrefabAsset: 0
@@ -10926,8 +10921,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1330897239}
   - component: {fileID: 1330897238}
-  m_Layer: 10
-  m_Name: DropOffPoint
+  - component: {fileID: 1330897240}
+  m_Layer: 11
+  m_Name: TheMacine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10974,6 +10970,26 @@ Transform:
   m_Father: {fileID: 2011555218}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1330897240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1330897237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b243f146b34a88748961e7667445b82f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teamID: 0
+  pauseMovementOnTeleportDelay: 1
+  team: {fileID: 344783594}
+  teamManager: {fileID: 1243243981}
+  damageData: {fileID: 0}
+  basePointValue: 0
+  dropRadius: 10
+  consumeRadius: 12
+  level: 0
 --- !u!1 &1332192972
 GameObject:
   m_ObjectHideFlags: 0
@@ -12242,7 +12258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAACYn+v53yqKhAIAAGEFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFtVNtu2zAM/ZVAz+tgtymK7G1z0mwD2gbLhj3MfWAsOhYiS4YuTdIi/z5KtmM3GxDAzOFFPEek3phQtsHCabM0gj9ojuzThAWbfZgwiL4f4IQmOCVEWF2jM6L4rLYyxCYEeiVKbeoF32KmrbMElyAtkstoF7IVQW8TdqDP1SykHMm6vgvWK1mzZHIis0Dl0IxC0yTpg3s7hLfRXhUS6gb5WrzikJTe9ilkxUBFrLqYQKHQUgrb9cTcsYmUM2isJ0YUwAUQx9hIiK9QbCsX+h0nP5WlRdcJYOA4F4akaquyL9pVoVINdtd29gLS47n1tuTDP96rNLpLo+uv/alppO0qUex+wLEA60byjuH5+7a92oPcwUbi7wrVo14a7RUnpzM+pHqL1/Ph75lYVmGxG/C21QvQN4Pevdr95QQOp8j9kElRb4Lr47QF1lJHteMIoKF7+UYNxwGxXQlCQxe/LP6E7XiSOse9MNaRq2OpQnsb7U0IZYuoWWDjXaaNwgh3TTeoQLrjisq4ywu88I2OvfDcQ9iV7vDO16/CRUqEh/gkuXCt9H64LIvffd2stFBujWCKalTPVnr/gLZ68k4KhQOj4HgkETOtVDt89j9pa29KKEZpDg/OG5yDg7gC1BNNCR+nkqAxQ3kpw0BGFqH4H2IRfs9B5AroXBlh9qhVXJ533+cwCFsv+PsxZ9NZCpsZL9MCpzdTuA3LfZfeJLd3MLvmBZ+yuAdCkeYgV61o3VXRBKmBi6KZ71+sydJAE/eOG9gvxWutR9cvVKnXhUFUT22FM1k0dAi9D3zBBdFco3NCxdljbzmTutghz8+F8ijs4uAM5EOVnDXiRbuA5CyL71jOTuz0F1BLAwQUAAAICAAAmJ/r5/E3VW0AAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9QzNNNRUEovSizIKAaKGII4pZkpIHa0komlYWKSZUqaYXKqibFJoqmuoYGBuaGxgal5oqVRSnKKiVIsUH1JZUGqX2JuKkRPQGJJRlpmXkpmXrqee1FmijvIaKXYWgBQSwECLQAUAAAICAAAmJ/r+d8qioQCAABhBQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAmJ/r5/E3VW0AAAB4AAAACQAkAAAAAAAAAAAAAADRAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAIkDAAAAAA==
+    dataString: UEsDBBQAAAgIAACYn+vk88tiiQIAAGQFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFtVG1v2jAQ/ivIn9cpoVQd+7YFyjapLSqb9mH0wxFfiIVjR34p0Ir/vrOTkJRNQsrx3IvveXznNyaUrTF32iyM4PeaI/s8YsFmH0YMou8JnNAEp4QIqyt0RuRf1FaG2IRAr0ShTTXnW8y0dZbgAqRFchntQrYi6G3EDvS5moaUI1nj22C9kjVNRicyc1QOzSA0TZIuuLNDeBPtVS6hqpGvxCv2SelNl0JWDFTEqo0JFHItpbBtT8wd60g5g9p6YkQBXABxjI2E+BLFtnSh32HyY1FYdK0ABo4zYUiqpir7ql0ZKlVgd01nLyB9OGecTD7Fppqq9/8EXKXRXRhdfesOTiNzV4p89wTHHKwbKDyEZ+8792oPcgcbib9LVA96YbRXnJzO+JDqLY5n/d8zt6zEfNfjTasXoK97yTvBu/sJHE6R/iGTotoE18dJA6ykjoLHKUBDV/OdGo4zYtsShIYufln8CdvhMLWOO2GsI1fLUoX2NtqbEMrmUbPAxrtMG4URbpuuUYF0xyWVcZd3eOEbHHvhuYOwLu3hra/bhouUCPfxSXLhWup9f1kWf/iqXmqh3ArB5OWgni31/h5t+eidFAp7RsHxQCJmWqlm/ux/0lbeFJAP0hwenDc4AwdxC6gnmhI+TCVBY4byUoaBjCxC8T/EIvyeg8gl0LkywuxBq7g/777PYRC2XvD3Y84m0xQ2U16kOU6uJ3AT9vs2vU5ubmE65jmfsLgHQpHmIJeNaO1V0QSpnouime8erdHCQB1XjxvYL8RrpQfXL1ShV7lBVI9NhTNZNHQIPRF8zgXRXKFzQsXZY29rJnW+Q74+F1pHYecHZ2DdV1mzWrxoF5A1y+JTtmYndvoLUEsDBBQAAAgIAACYn+vn8TdVbQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz1DM001FQSi9KLMgoBooYgjilmSkgdrSSiaVhYpJlSpphcqqJsUmiqa6hgYG5obGBqXmipVFKcoqJUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAACYn+vk88tiiQIAAGQFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAACYn+vn8TdVbQAAAHgAAAAJACQAAAAAAAAAAAAAANYCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAjgMAAAAA
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -12255,7 +12271,7 @@ MonoBehaviour:
   manualDebugFloorRoof: 0
   showSearchTree: 0
   unwalkableNodeDebugSize: 0.3
-  logPathResults: 1
+  logPathResults: 0
   maxNearestNodeDistance: 100
   scanOnStartup: 1
   fullGetNearestSearch: 0
@@ -12269,11 +12285,43 @@ MonoBehaviour:
     _ConnectionHighLerp: {r: 1, g: 0, b: 0, a: 0.5}
     _MeshEdgeColor: {r: 0, g: 0, b: 0, a: 0.5}
     _AreaColors: []
-  tagNames: []
+  tagNames:
+  - Basic Ground
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 25
+  - 26
+  - 27
+  - 28
+  - 29
+  - 30
+  - 31
   heuristic: 2
   heuristicScale: 1
   threadCount: 1
-  maxFrameTime: 1
+  maxFrameTime: 10
   minAreaSize: 0
   batchGraphUpdates: 0
   graphUpdateBatchingInterval: 0.2
@@ -14172,7 +14220,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1724430418}
   - component: {fileID: 1724430419}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: New Sprite (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14185,7 +14233,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1724430417}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.9, y: 1.9, z: 1}
   m_Children: []
@@ -14224,9 +14272,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 244740435
-  m_SortingLayer: 1
-  m_SortingOrder: -2
+  m_SortingLayerID: -1899120013
+  m_SortingLayer: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: a1892e0ed2ee3094ea46df83a68cc3d5, type: 3}
   m_Color: {r: 0.9183879, g: 0, b: 1, a: 1}
   m_FlipX: 0
@@ -14856,7 +14904,7 @@ GameObject:
   - component: {fileID: 1770408931}
   - component: {fileID: 1770408933}
   - component: {fileID: 1770408932}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: TextMeshPro Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18077,7 +18125,7 @@ GameObject:
   - component: {fileID: 2121511890}
   - component: {fileID: 2121511889}
   - component: {fileID: 2121511888}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18157,7 +18205,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 244740435
+  m_SortingLayerID: -1272411237
   m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!1001 &2125237710

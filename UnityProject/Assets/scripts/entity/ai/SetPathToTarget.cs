@@ -37,13 +37,20 @@ public class SetPathToTarget : MonoBehaviour {
     {
 		if (host != null) 
         {
+            //Set to target
             if(host.currentTarget != null)
             {
                 ai.destination = host.currentTarget.gameObject.transform.position;
             }
+            //Set to objective
             else if(host.currentObjective != null)
             {
                 ai.destination = host.currentObjective.transform.position;
+            }
+            //Reset
+            else
+            {
+                ai.destination = host.gameObject.transform.position;
             }
         }
 	}

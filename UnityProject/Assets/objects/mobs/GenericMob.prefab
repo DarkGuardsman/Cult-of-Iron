@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 114640955121007660}
   - component: {fileID: 114245798231824090}
   - component: {fileID: 114950455298409674}
+  - component: {fileID: 114856434012544886}
   m_Layer: 9
   m_Name: GenericMob
   m_TagString: Untagged
@@ -112,7 +113,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.035410106}
   serializedVersion: 2
-  m_Radius: 0.36458987
+  m_Radius: 1
 --- !u!114 &114141057450512094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -147,6 +148,7 @@ MonoBehaviour:
   currentTarget: {fileID: 0}
   currentObjective: {fileID: 0}
   heldScrapItem: {fileID: 0}
+  theMachine: {fileID: 0}
 --- !u!114 &114444247568871836
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -206,6 +208,18 @@ MonoBehaviour:
   bezierTangentLength: 0.4
   offset: 0.2
   factor: 0.1
+--- !u!114 &114856434012544886
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1426938034879078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b000e1fbde99f6a4aad1cdc3cd0c8515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  host: {fileID: 114245798231824090}
 --- !u!114 &114896170983979574
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -221,7 +235,7 @@ MonoBehaviour:
   repathRate: 0.5
   canSearch: 1
   canMove: 1
-  maxSpeed: 3
+  maxSpeed: 6
   gravity: {x: NaN, y: NaN, z: NaN}
   groundMask:
     serializedVersion: 2
@@ -230,7 +244,7 @@ MonoBehaviour:
   rotationIn2D: 1
   targetCompatibility: {fileID: 0}
   maxAcceleration: -2.5
-  rotationSpeed: 20
+  rotationSpeed: 60
   slowdownDistance: 0.8
   pickNextWaypointDist: 1
   endReachedDistance: 0.5
@@ -249,6 +263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8a2ab34df50a714189ba1241bc39012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   host: {fileID: 114245798231824090}
   targetDelay: 1
   targetRange: 100

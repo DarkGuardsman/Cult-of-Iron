@@ -19,4 +19,10 @@ public class EntityMob : Entity {
     {
         return currentObjective != null;
     }
+    
+    public void clearObjectives()
+    {
+        currentTarget = null;
+        currentObjective = null;
+    }
 }

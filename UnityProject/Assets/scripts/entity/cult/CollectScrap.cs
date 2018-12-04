@@ -23,10 +23,17 @@ public class CollectScrap : MonoBehaviour {
         {
             if(!host.hasTarget() && !host.hasObjective())
             {
+                //Delay search to save on performance
+                if(targetTimer > 0)
+                {
+                    targetTimer -= Time.deltaTime;
+                    return;
+                }
+                
                 //Find target if we have no valid target
                 if(!isTargetValid(currentTarget))
                 {
-                    currentTarget = null;
+                    clearTarget();
                     findTarget();
                 }
             }
@@ -36,8 +43,13 @@ public class CollectScrap : MonoBehaviour {
             {
                 if(host.hasTarget())
                 {
-                    currentTarget = null;
+                    clearTarget();
                     log("CollectScrap#update() - clearing scrap reference has host has a target");
+                }
+                else if(currentTarget.currentEntityPathingTowards != null && currentTarget.currentEntityPathingTowards != host)
+                {
+                    clearTarget();
+                    log("CollectScrap#update() - clearing scrap reference as its being pathed by another entity");
                 }
                 //else if(host.currentObjective != currentTarget.gameObject.transform)
                 //{
@@ -49,6 +61,9 @@ public class CollectScrap : MonoBehaviour {
             //Path to target if its valid
             if(isTargetValid(currentTarget))
             {
+                //Set entity as path target
+                currentTarget.currentEntityPathingTowards = host;
+                
                 //Set path
                 host.currentObjective = currentTarget.gameObject.transform;
                     
@@ -57,7 +72,7 @@ public class CollectScrap : MonoBehaviour {
                 log("Distance: " + distance);
                 if(distance <= pickUpDistance)
                 {
-                    pickUpItem();
+                    currentTarget.pickup(host);
                 }
             }   
         }        
@@ -65,17 +80,31 @@ public class CollectScrap : MonoBehaviour {
     
     bool shouldCollectScrap()
     {
-        return host.heldScrapItem == null;
+        return host.heldScrapItem == null; //TODO add role check
     }
     
-    protected void pickUpItem()
+    protected virtual void clearTarget()
     {
-        log("Can pick up item");
+        if(currentTarget != null)
+        {
+           if(currentTarget.currentEntityPathingTowards == host)
+           {
+               currentTarget.currentEntityPathingTowards = null;
+           }
+           if(currentTarget.currentHolder == host)
+           {
+               currentTarget.drop(host);
+           }
+        }
+        currentTarget = null;
     }
     
     protected virtual bool isTargetValid(ScrapItem target)
     {
-        return target != null;
+        return target != null 
+            && target.currentHolder == null 
+            && !target.placedNearMachine
+            && (target.currentEntityPathingTowards == null || target.currentEntityPathingTowards == host);
     }
     
     protected virtual bool isInTargetArea(ScrapItem target, float distance)
