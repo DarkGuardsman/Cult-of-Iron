@@ -88,6 +88,6 @@ public class PlayerOptions : MonoBehaviour
     public void ApplyOptions()
     {
         //Update settings
-        cinemachineCamera.m_Lens.OrthographicSize = currentSettings.cameraZoom;
+        //cinemachineCamera.m_Lens.OrthographicSize = currentSettings.cameraZoom;
     }
 }
