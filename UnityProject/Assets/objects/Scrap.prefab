@@ -109,6 +109,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 1
   currentHolder: {fileID: 0}
+  currentEntityPathingTowards: {fileID: 0}
+  placedNearMachine: 0
 --- !u!212 &212624985211042308
 SpriteRenderer:
   m_ObjectHideFlags: 1

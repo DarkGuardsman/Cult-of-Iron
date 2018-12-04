@@ -9,14 +9,17 @@ public class PlayerZoom : PlayerControls
     public float maxZoom = 20;
     
     private PlayerOptions playerOptions;
-    private CinemachineVirtualCamera cinemachineCamera;
+    //private CinemachineVirtualCamera cinemachineCamera;
+    
+    private Camera camera;
     
     // Use this for initialization
 	public override void Start () 
     {
         base.Start();
         playerOptions = FindObjectOfType<PlayerOptions>();
-        cinemachineCamera = FindObjectOfType<CinemachineVirtualCamera>();
+        camera = gameObject.GetComponent<Camera>();
+        //cinemachineCamera = FindObjectOfType<CinemachineVirtualCamera>();
 	}
 	
 	// Update is called once per frame
@@ -24,7 +27,19 @@ public class PlayerZoom : PlayerControls
     {
         //Get input
         float zoom = GetZoom();
+         
+        camera.orthographicSize -= playerOptions.currentSettings.zoomSpeed * zoom;
+       
+        if(camera.orthographicSize > maxZoom)
+        {
+            camera.orthographicSize = maxZoom;
+        }
+        else if(camera.orthographicSize < minZoom)
+        {
+            camera.orthographicSize = minZoom;
+        }
         
+        /*
         //Do zoom
         cinemachineCamera.m_Lens.OrthographicSize -= playerOptions.currentSettings.zoomSpeed * zoom;
         
@@ -37,6 +52,7 @@ public class PlayerZoom : PlayerControls
         {
             cinemachineCamera.m_Lens.OrthographicSize = minZoom;
         }
+        */
 	}
     
     float GetZoom()
